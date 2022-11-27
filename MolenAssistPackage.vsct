@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CommandTable xmlns="http://schemas.microsoft.com/VisualStudio/2005-10-18/CommandTable" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <Extern href="stdidcmd.h"/>
+  <Extern href="vsshlids.h"/>
+  <Include href="KnownImageIds.vsct"/>
+
+  <Commands package="guidMolenAssistPackage">
+    <Groups>
+      <Group guid="guidMolenAssistPackageCmdSet" id="MolenAssistMenuGroup" priority="0x0600">
+        <Parent guid="guidSHLMainMenu" id="IDM_VS_MENU_FILE"/>
+      </Group>
+    </Groups>
+
+    <Buttons>
+      <Button guid="guidMolenAssistPackageCmdSet" id="OpenAssociatedCommandId" priority="0x0100" type="Button">
+        <Parent guid="guidMolenAssistPackageCmdSet" id="MolenAssistMenuGroup" />
+        <Icon guid="ImageCatalogGuid" id="Open" />
+        <Strings>
+          <ButtonText>Open Associated File</ButtonText>
+          <LocCanonicalName>.File.OpenAssociated</LocCanonicalName>
+        </Strings>
+      </Button>
+    </Buttons>
+
+    <Bitmaps>
+      <Bitmap guid="guidImages" href="Resources\OpenAssociatedCommand.png" usedList="bmpPic1, bmpPic2, bmpPicSearch, bmpPicX, bmpPicArrows, bmpPicStrikethrough"/>
+    </Bitmaps>
+  </Commands>
+  
+  <KeyBindings>
+    <KeyBinding guid="guidMolenAssistPackageCmdSet" id="OpenAssociatedCommandId" editor="guidVSStd97" key1="o" mod1="Alt"/>
+  </KeyBindings>
+
+  <Symbols>
+    <GuidSymbol name="guidMolenAssistPackage" value="{e870814b-0b20-4529-b17c-76b436ad6980}" />
+
+    <GuidSymbol name="guidMolenAssistPackageCmdSet" value="{4a8dce2d-1259-427f-9574-ae3ac94304c6}">
+      <IDSymbol name="MolenAssistMenuGroup" value="0x1020" />
+      <IDSymbol name="OpenAssociatedCommandId" value="0x0100" />
+    </GuidSymbol>
+
+    <GuidSymbol name="guidImages" value="{a673ce8d-3dd5-4e0e-9e0c-ec8e09cf048a}" >
+      <IDSymbol name="bmpPic1" value="1" />
+      <IDSymbol name="bmpPic2" value="2" />
+      <IDSymbol name="bmpPicSearch" value="3" />
+      <IDSymbol name="bmpPicX" value="4" />
+      <IDSymbol name="bmpPicArrows" value="5" />
+      <IDSymbol name="bmpPicStrikethrough" value="6" />
+    </GuidSymbol>
+  </Symbols>
+</CommandTable>
