@@ -13,6 +13,7 @@ namespace MolenAssist
         public const int CommandId = 0x0100;
 
         public static readonly Guid CommandSet = new Guid("4a8dce2d-1259-427f-9574-ae3ac94304c6");
+        public static readonly string PhysicalFileKind = "{6BB5F8EE-4483-11D3-8BCF-00C04F8EC28C}";
 
         private readonly MolenAssistPackage package;
 
@@ -116,7 +117,8 @@ namespace MolenAssist
             ThreadHelper.ThrowIfNotOnUIThread();
 
             List<ProjectItem> allFiles = new List<ProjectItem>();
-            if (item.Name.Contains(stem))
+            string kind = item.Kind;
+            if (kind == PhysicalFileKind && item.Name.Contains(stem))
                 allFiles.Add(item);
 
             foreach (ProjectItem subItem in item.ProjectItems)
