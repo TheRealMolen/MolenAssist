@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
     <Metadata>
-        <Identity Id="MolenAssist.5c8145e2-c219-4b1b-8a69-668f43023557" Version="1.0.1" Language="en-US" Publisher="Alex Mole" />
+        <Identity Id="MolenAssist.5c8145e2-c219-4b1b-8a69-668f43023557" Version="1.0.2" Language="en-US" Publisher="Alex Mole" />
         <DisplayName>MolenAssist</DisplayName>
         <Description xml:space="preserve">Molen's Very Helpful Extension</Description>
     </Metadata>

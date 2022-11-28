@@ -93,6 +93,12 @@ namespace MolenAssist
             string filename = System.IO.Path.GetFileNameWithoutExtension(fullName);
             if (filename.StartsWith("test_"))
                 filename = filename.Replace("test_", "");
+            if (filename.StartsWith("shader_"))
+                filename = filename.Replace("shader_", "");
+            if (filename.EndsWith("_vert"))
+                filename = filename.Replace("_vert", "");
+            if (filename.EndsWith("_frag"))
+                filename = filename.Replace("_frag", "");
             return filename;
         }
 
@@ -118,7 +124,7 @@ namespace MolenAssist
 
             List<ProjectItem> allFiles = new List<ProjectItem>();
             string kind = item.Kind;
-            if (kind == PhysicalFileKind && item.Name.Contains(stem))
+            if (kind == PhysicalFileKind && GetNameStem(item.Name) == stem)
                 allFiles.Add(item);
 
             foreach (ProjectItem subItem in item.ProjectItems)
